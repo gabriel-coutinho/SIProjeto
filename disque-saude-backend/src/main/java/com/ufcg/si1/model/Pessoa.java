@@ -1,18 +1,19 @@
 package com.ufcg.si1.model;
 
-public class Pessoa extends Endereco {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Pessoa {
 	private String nome;
-
 	private String email;
-
-	public Pessoa(){
-		super();
-	}
-
-
-	public Pessoa(String nome, String email, String rua, String uf,
-			String cidade) {
-		super(rua, uf, cidade);
+	
+	@Id
+	@GeneratedValue
+	private Long id;
+	
+	public Pessoa(String nome, String email) {
 		this.nome = nome;
 		this.email = email;
 	}
